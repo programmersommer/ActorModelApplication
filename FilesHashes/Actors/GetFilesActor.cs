@@ -37,7 +37,7 @@ namespace FilesHashes.Actors
                 foreach (var folder in folders)
                 {
                     var getFilesActor = Context.ActorOf<GetFilesActor>();
-                    getFilesActor.Tell(folder);
+                    getFilesActor.Tell(new ScanRequestMessage() { Path = folder });
                 }
             }
             catch
